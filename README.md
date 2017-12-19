@@ -1,5 +1,7 @@
 # react-router-dispatcher-redirect
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/adam-26/react-router-dispatcher-redirect.svg)](https://greenkeeper.io/)
+
 [![npm](https://img.shields.io/npm/v/react-router-dispatcher-redirect.svg)](https://www.npmjs.com/package/react-router-dispatcher-redirect)
 [![npm](https://img.shields.io/npm/dm/react-router-dispatcher-redirect.svg)](https://www.npmjs.com/package/react-router-dispatcher-redirect)
 [![CircleCI branch](https://img.shields.io/circleci/project/github/adam-26/react-router-dispatcher-redirect/master.svg)](https://circleci.com/gh/adam-26/react-router-dispatcher-redirect/tree/master)
