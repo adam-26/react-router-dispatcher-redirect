@@ -8,18 +8,18 @@ import redirectHoc, { getRedirectTo, shouldPerformRedirect } from './redirectHoc
 // This is copied from:
 // https://github.com/ReactTraining/react-router/blob/master/packages/react-router/modules/Redirect.js#L69
 function computeTo({ computedMatch, to }) {
-    if (computedMatch) {
-        if (typeof to === "string") {
-            return generatePath(to, computedMatch.params)
-        } else {
-            return {
-                ...to,
-                pathname: generatePath(to.pathname, computedMatch.params)
-            }
-        }
+    if (!computedMatch) {
+        return to;
     }
 
-    return to
+    if (typeof to === "string") {
+        return generatePath(to, computedMatch.params)
+    }
+
+    return {
+        ...to,
+        pathname: generatePath(to.pathname, computedMatch.params)
+    }
 }
 
 export const REDIRECT = 'redirect';
@@ -43,14 +43,15 @@ export default function redirectAction(options: Object = {}) {
         name: REDIRECT,
 
         staticMethod: (routeProps, { httpResponse, ...actionProps }) => {
-            if (!httpResponse.redirect) {
-                if (shouldPerformRedirect(shouldRedirect, routeProps, actionProps)) {
-                    const redirectTo = getRedirectTo(to, routeProps, actionProps);
-                    httpResponse.statusCode = statusCode;
-                    httpResponse.redirect =
-                        (typeof redirectTo === 'boolean' && redirectTo === true) ||
-                        computeTo({computedMatch: routeProps.match, to: redirectTo});
-                }
+            if (httpResponse.redirect) {
+                // redirect has been previously set
+                return;
+            }
+
+            if (shouldPerformRedirect(shouldRedirect, routeProps, actionProps)) {
+                const redirectTo = getRedirectTo(to, routeProps, actionProps);
+                httpResponse.statusCode = statusCode;
+                httpResponse.redirect = computeTo({computedMatch: routeProps.match, to: redirectTo});
             }
         },
 
