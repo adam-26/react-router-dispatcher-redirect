@@ -1,6 +1,6 @@
 {
   "name": "react-router-dispatcher-redirect",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "react-router-dispatcher action for HTTP redirects",
   "main": "lib/index.js",
   "directories": {
