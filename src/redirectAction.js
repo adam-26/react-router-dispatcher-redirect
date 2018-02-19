@@ -34,7 +34,7 @@ export default function redirectAction(options: Object = {}) {
         shouldRedirect,
         ...redirectProps
     } = Object.assign({
-        statusCode: 301,
+        statusCode: 302, // always default to temporary redirects
         shouldRedirect: true,
         mapParamsToProps: params => params
     }, options);
