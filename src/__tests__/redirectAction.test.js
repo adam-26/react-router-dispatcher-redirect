@@ -2,10 +2,7 @@ import redirectAction, { REDIRECT } from "../redirectAction";
 
 describe('redirectAction', () => {
     const redirectOpts = {
-        to: '/home',
-        mapParamsToProps: ({ httpResponse }/*, routerCtx*/) => {
-            return { httpResponse };
-        }
+        to: '/home'
     };
     let action;
 
@@ -34,25 +31,26 @@ describe('redirectAction', () => {
         });
     });
 
-    describe('mapParamsToProps', () => {
+    describe('filterParamsToProps', () => {
         test('returns filtered props', () => {
             const httpResp = { httpResponse: { redirect: '/world' } };
             const params = { random: 1, ...httpResp };
 
-            const props = action.mapParamsToProps(params);
-            expect(props).toEqual(httpResp);
+            const props = action.filterParamsToProps(params);
+            expect(props.httpResponse).toBeDefined();
+            expect(props.random).not.toBeDefined();
         });
     });
 
     describe('stopServerActions', () => {
         test('returns false when redirect is false', () => {
             const props = { httpResponse: { redirect: false } };
-            expect(action.stopServerActions({}, props)).toBe(false);
+            expect(action.stopServerActions(props)).toBe(false);
         });
 
         test('returns true when redirect is not false', () => {
             const props = { httpResponse: { redirect: '/world' } };
-            expect(action.stopServerActions({}, props)).toBe(true);
+            expect(action.stopServerActions(props)).toBe(true);
         });
     });
 
@@ -61,16 +59,16 @@ describe('redirectAction', () => {
             action = redirectAction({ to: () => '/hello' });
             const props = { httpResponse: { redirect: '/world' } };
 
-            action.staticMethod({}, props);
+            action.staticMethod(props);
 
             expect(props.httpResponse.redirect).toBe('/world');
         });
 
         test('does not assign redirect when condition not met', () => {
-            action = redirectAction({ to: (routeProps, { condition }) => condition ? '/hello' : false });
+            action = redirectAction({ to: ({ condition }) => condition ? '/hello' : false });
             const props = { httpResponse: { redirect: false }, condition: false };
 
-            action.staticMethod({}, props);
+            action.staticMethod(props);
             expect(props.httpResponse.redirect).toBe(false);
         });
 
@@ -78,7 +76,7 @@ describe('redirectAction', () => {
             action = redirectAction({ to: () => '/hello' });
             const props = { httpResponse: { redirect: false } };
 
-            action.staticMethod({}, props);
+            action.staticMethod(props);
             expect(props.httpResponse.redirect).toBe('/hello');
         });
     });

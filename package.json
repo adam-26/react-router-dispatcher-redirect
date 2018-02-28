@@ -56,20 +56,21 @@
     "react-html-metadata": "^1.1.0",
     "react-router": "^4.2.0",
     "react-router-config": "^1.0.0-beta.4",
-    "react-router-dispatcher": "^2.0.1",
+    "react-router-dispatcher": "^6.0.0",
+    "react-router-dispatcher-status-code": "^2.0.0",
     "react-test-renderer": "^16.2.0",
     "standard-version": "^4.2.0"
   },
   "peerDependencies": {
     "react": "^16.0.0",
     "react-router": "^4.2.0",
-    "react-router-dispatcher": "^2.0.1"
+    "react-router-dispatcher": "^6.0.0",
+    "react-router-dispatcher-status-code": "^2.0.0"
   },
   "dependencies": {
     "hoist-non-react-statics": "^2.3.1",
     "invariant": "^2.2.2",
     "react-display-name": "^0.2.3",
-    "react-router-dispatcher-status-code": "^1.1.4",
     "warning": "^3.0.0"
   },
   "jest": {

@@ -11,10 +11,10 @@ export function getRedirectTo(redirectLocation, routeProps, componentProps) {
         redirectLocation;
 }
 
-export function shouldPerformRedirect(shouldRedirect, routeProps, componentProps) {
+export function shouldPerformRedirect(shouldRedirect, props) {
     return typeof shouldRedirect === 'boolean' ?
         shouldRedirect :
-        shouldRedirect(routeProps, componentProps);
+        shouldRedirect(props);
 }
 
 function redirectHoc({ to, shouldRedirect, ...redirectProps }) {

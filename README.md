@@ -4,8 +4,8 @@
 [![npm](https://img.shields.io/npm/v/react-router-dispatcher-redirect.svg)](https://www.npmjs.com/package/react-router-dispatcher-redirect)
 [![npm](https://img.shields.io/npm/dm/react-router-dispatcher-redirect.svg)](https://www.npmjs.com/package/react-router-dispatcher-redirect)
 [![CircleCI branch](https://img.shields.io/circleci/project/github/adam-26/react-router-dispatcher-redirect/master.svg)](https://circleci.com/gh/adam-26/react-router-dispatcher-redirect/tree/master)
-[![Code Climate](https://img.shields.io/codeclimate/coverage/github/adam-26/react-router-dispatcher-redirect.svg)](https://codeclimate.com/github/adam-26/react-router-dispatcher-redirect)
-[![Code Climate](https://img.shields.io/codeclimate/github/adam-26/react-router-dispatcher-redirect.svg)](https://codeclimate.com/github/adam-26/react-router-dispatcher-redirect)
+[![Maintainability](https://api.codeclimate.com/v1/badges/1887c34c41b11f00b278/maintainability)](https://codeclimate.com/github/adam-26/react-router-dispatcher-redirect/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/1887c34c41b11f00b278/test_coverage)](https://codeclimate.com/github/adam-26/react-router-dispatcher-redirect/test_coverage)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
 A [react-router-dispatcher](https://github.com/adam-26/react-router-dispatcher) **action** for defining react-router redirects that support server-side streaming.
@@ -164,7 +164,7 @@ _Used to enable conditional redirects, for example protecting authenticated rout
 
   * An optional function that maps action parameters to component props
 
-**shouldRedirect**: `boolean | (routeProps: Object, componentProps: Object) => boolean`
+**shouldRedirect**: `boolean | (props: Object) => boolean`
 
   * An optional boolean or function that returns true if the requets should be redirected
 
