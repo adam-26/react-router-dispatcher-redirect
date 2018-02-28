@@ -1,6 +1,6 @@
 {
   "name": "react-router-dispatcher-redirect",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "lockfileVersion": 1,
   "requires": true,
   "dependencies": {
@@ -11646,9 +11646,9 @@
       "dev": true
     },
     "react-router-dispatcher": {
-      "version": "2.0.1",
-      "resolved": "https://registry.npmjs.org/react-router-dispatcher/-/react-router-dispatcher-2.0.1.tgz",
-      "integrity": "sha512-6DnaLOv0ASqFMUfvxCLRn+KBwBkn7A7ICBkzaB5P8GzcLR6L6og3NnLqjhctVikX/O/Qi29EldIeDJyfu+Uq6A==",
+      "version": "6.0.0",
+      "resolved": "https://registry.npmjs.org/react-router-dispatcher/-/react-router-dispatcher-6.0.0.tgz",
+      "integrity": "sha512-3uVhzCQRoHqHY6Qp30wHFLbHPO9vU/9J6A+Tt+u7srFeNKgdXbyLDh3wTCYiFVjCrgk05s1F108WZ8NEhDdVNg==",
       "dev": true,
       "requires": {
         "history": "4.7.2",
@@ -11659,9 +11659,10 @@
       }
     },
     "react-router-dispatcher-status-code": {
-      "version": "1.1.5",
-      "resolved": "https://registry.npmjs.org/react-router-dispatcher-status-code/-/react-router-dispatcher-status-code-1.1.5.tgz",
-      "integrity": "sha512-zBcLL7FMfrHi/uIvB1DmpLLMqEFx8uutIXrACtIw/T1E5z1tA6/60GCBTtdGPjVTYf0/VK0kcpbAyImYEzTQmA==",
+      "version": "2.0.0",
+      "resolved": "https://registry.npmjs.org/react-router-dispatcher-status-code/-/react-router-dispatcher-status-code-2.0.0.tgz",
+      "integrity": "sha512-G34brEpPsK3GqIHaMAWcXwu6dtSICnz52/aAt/+tEIRPWoMLnVOXLeoVZ00h61thjz4cp4PiRmO+3uUEPOjnEA==",
+      "dev": true,
       "requires": {
         "invariant": "2.2.2"
       }

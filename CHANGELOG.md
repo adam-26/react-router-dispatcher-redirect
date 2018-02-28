@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/adam-26/react-router-dispatcher-redirect/compare/v1.1.0...v2.0.0) (2018-02-28)
+
+
+### Bug Fixes
+
+* **code:** Update dependency ([cee12df](https://github.com/adam-26/react-router-dispatcher-redirect/commit/cee12df))
+* **code:** Update dependency ([#8](https://github.com/adam-26/react-router-dispatcher-redirect/issues/8)) ([53004c9](https://github.com/adam-26/react-router-dispatcher-redirect/commit/53004c9))
+
+
+### BREAKING CHANGES
+
+* **code:** Update react-router-dispatcher to latest version.
+
+Consumers will need to update usage of `shouldRedirect` - it will now receive only a single `props` argument.
+* **code:** Update react-router-dispatcher to latest version.
+
+Consumers will need to update usage of `shouldRedirect` - it will now receive only a single `props` argument.
+
+
+
 <a name="1.1.0"></a>
 # [1.1.0](https://github.com/adam-26/react-router-dispatcher-redirect/compare/v1.0.7...v1.1.0) (2018-02-19)
 
