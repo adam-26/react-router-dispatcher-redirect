@@ -28,30 +28,28 @@ export default function redirectAction(options: Object = {}) {
     invariant(options.to, 'redirectAction() requires a \'to\' prop value.');
 
     const {
-        mapParamsToProps,
         statusCode,
         to,
         shouldRedirect,
         ...redirectProps
     } = Object.assign({
         statusCode: 302, // always default to temporary redirects
-        shouldRedirect: true,
-        mapParamsToProps: params => params
+        shouldRedirect: true
     }, options);
 
     return {
         name: REDIRECT,
 
-        staticMethod: (routeProps, { httpResponse, ...actionProps }) => {
+        staticMethod: ({ httpResponse, ...actionProps }) => {
             if (httpResponse.redirect) {
                 // redirect has been previously set
                 return;
             }
 
-            if (shouldPerformRedirect(shouldRedirect, routeProps, actionProps)) {
-                const redirectTo = getRedirectTo(to, routeProps, actionProps);
+            if (shouldPerformRedirect(shouldRedirect, actionProps)) {
+                const redirectTo = getRedirectTo(to, actionProps);
                 httpResponse.statusCode = statusCode;
-                httpResponse.redirect = computeTo({computedMatch: routeProps.match, to: redirectTo});
+                httpResponse.redirect = computeTo({computedMatch: actionProps.match, to: redirectTo});
             }
         },
 
@@ -65,15 +63,14 @@ export default function redirectAction(options: Object = {}) {
             };
         },
 
-        mapParamsToProps: (params, routerCtx) => ({
-            ...mapParamsToProps(params, routerCtx),
+        filterParamsToProps: (params) => ({
             httpResponse: params.httpResponse
         }),
 
         hoc: (Component) => redirectHoc({ to, shouldRedirect, ...redirectProps })(Component),
 
         // stop processing actions on the server if a redirect is required
-        stopServerActions: (routeProps, { httpResponse: { redirect } }) => {
+        stopServerActions: ({ httpResponse: { redirect } }) => {
             return redirect !== false
         }
     };
