@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.0.1"></a>
+## [2.0.1](https://github.com/adam-26/react-router-dispatcher-redirect/compare/v2.0.0...v2.0.1) (2018-02-28)
+
+
+### Bug Fixes
+
+* **code:** HOC function bug ([d753db9](https://github.com/adam-26/react-router-dispatcher-redirect/commit/d753db9))
+* **code:** HOC function bug ([#9](https://github.com/adam-26/react-router-dispatcher-redirect/issues/9)) ([f42fb9a](https://github.com/adam-26/react-router-dispatcher-redirect/commit/f42fb9a))
+
+
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/adam-26/react-router-dispatcher-redirect/compare/v1.1.0...v2.0.0) (2018-02-28)
 
