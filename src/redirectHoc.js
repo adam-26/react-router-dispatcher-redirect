@@ -17,7 +17,7 @@ export function shouldPerformRedirect(shouldRedirect, props) {
         shouldRedirect(props);
 }
 
-function redirectHoc({ to, shouldRedirect, ...redirectProps }) {
+function redirectHoc({ to, shouldRedirect, ...redirectProps } = {}) {
     return (Component) => {
         const isComponentNull = Component === null;
 

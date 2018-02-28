@@ -2,7 +2,7 @@
 import invariant from 'invariant';
 import withRedirect from './withRedirect';
 
-export default function redirectRoute(options) {
+export default function redirectRoute(options = {}) {
     invariant(options.to, 'redirectRoute() requires a \'to\' prop value.');
     invariant(options.from, 'redirectRoute() requires a \'from\' prop value.');
 
